@@ -32,11 +32,11 @@ fun DashboardItemList(modifier: Modifier) {
     Box(
         modifier
             .fillMaxSize()
-            .padding(8.dp)
+            .padding(start = 8.dp, end = 8.dp, bottom = 8.dp)
     ) {
         Column(
             modifier
-                .padding(8.dp)
+                .padding(start = 8.dp, end = 8.dp)
                 .verticalScroll(scrollState)
         ) {
             Row(modifier = modifier.height(200.dp)) {
@@ -59,14 +59,14 @@ fun DashboardItemList(modifier: Modifier) {
                 )
                 ImageCard(
                     "Teams",
-                    "",
+                    "https://static.wikia.nocookie.net/naruto/images/7/7d/Konoha_Anbu.png/revision/latest?cb=20150226122737",
                     modifier = Modifier.weight(1f)
                 )
             }
             Row(modifier = modifier.height(200.dp)) {
                 ImageCard(
                     "Clans",
-                    "",
+                    "https://static.wikia.nocookie.net/naruto/images/c/c3/Uchiha_Symbol.svg/revision/latest?cb=20150323000713",
                     modifier = Modifier.weight(1f)
                 )
                 ImageCard(
