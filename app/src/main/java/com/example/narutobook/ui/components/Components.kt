@@ -91,3 +91,40 @@ fun NetworkImage(
         contentScale = ContentScale.Crop
     )
 }
+
+@Composable
+fun NetworkImageWithText(
+    title: String,
+    imageUrl: String,
+    modifier: Modifier = Modifier
+) {
+    Column(
+        modifier = modifier
+            .padding(8.dp)
+            .shadow(4.dp, RoundedCornerShape(12.dp))
+            .clip(RoundedCornerShape(12.dp))
+            .background(Color.White)
+            .padding(12.dp)
+    ) {
+
+        Image(
+            painter = rememberImagePainter(
+                data = imageUrl,
+                builder = {
+                    crossfade(true)
+                }
+            ),
+            contentDescription = null,
+            modifier = modifier
+                .fillMaxWidth()
+                .height(200.dp)
+                .clip(RoundedCornerShape(8.dp)),
+            contentScale = ContentScale.Crop
+        )
+        Text(
+            text = title,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(bottom = 4.dp)
+        )
+    }
+}
