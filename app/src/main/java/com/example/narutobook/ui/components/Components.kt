@@ -101,7 +101,7 @@ fun NetworkImageWithText(
 ) {
     Column(
         modifier = Modifier
-            .shadow(8.dp, RoundedCornerShape(12.dp))
+            .shadow(4.dp, RoundedCornerShape(12.dp))
             .clip(RoundedCornerShape(12.dp))
             .background(Color.White)
 
@@ -116,7 +116,7 @@ fun NetworkImageWithText(
             contentDescription = null,
             modifier = modifier
                 .fillMaxWidth()
-                .height(200.dp)
+                .height(150.dp)
                 .clip(RoundedCornerShape(8.dp))
                 .padding(4.dp)
                 .clip(RoundedCornerShape(12.dp)),
