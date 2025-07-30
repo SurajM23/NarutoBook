@@ -23,6 +23,7 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import com.example.narutobook.model.Character
@@ -40,7 +41,7 @@ fun Toolbar(modifier: Modifier, toolbarTitle: String) {
         modifier = modifier
             .fillMaxWidth()
             .wrapContentHeight()
-            .shadow(6.dp)
+            .shadow(20.dp)
     )
 }
 
@@ -99,14 +100,12 @@ fun NetworkImageWithText(
     modifier: Modifier = Modifier
 ) {
     Column(
-        modifier = modifier
-            .padding(8.dp)
-            .shadow(4.dp, RoundedCornerShape(12.dp))
+        modifier = Modifier
+            .shadow(8.dp, RoundedCornerShape(12.dp))
             .clip(RoundedCornerShape(12.dp))
             .background(Color.White)
-            .padding(12.dp)
-    ) {
 
+    ) {
         Image(
             painter = rememberImagePainter(
                 data = imageUrl,
@@ -118,13 +117,18 @@ fun NetworkImageWithText(
             modifier = modifier
                 .fillMaxWidth()
                 .height(200.dp)
-                .clip(RoundedCornerShape(8.dp)),
+                .clip(RoundedCornerShape(8.dp))
+                .padding(4.dp)
+                .clip(RoundedCornerShape(12.dp)),
             contentScale = ContentScale.Crop
         )
         Text(
             text = title,
             fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(bottom = 4.dp)
+            modifier = Modifier
+                .padding(bottom = 4.dp)
+                .fillMaxWidth(),
+            textAlign = TextAlign.Center,
         )
     }
 }

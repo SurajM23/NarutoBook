@@ -7,7 +7,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.runtime.Composable
@@ -26,12 +28,17 @@ fun DashboardScreen(modifier: Modifier) {
 
 @Composable
 fun DashboardItemList(modifier: Modifier) {
+    val scrollState = rememberScrollState()
     Box(
         modifier
             .fillMaxSize()
             .padding(8.dp)
     ) {
-        Column(modifier.padding(8.dp)) {
+        Column(
+            modifier
+                .padding(8.dp)
+                .verticalScroll(scrollState)
+        ) {
             Row(modifier = modifier.height(200.dp)) {
                 ImageCard(
                     "Characters",
@@ -41,6 +48,42 @@ fun DashboardItemList(modifier: Modifier) {
                 ImageCard(
                     "Tailed Beasts",
                     "https://static.wikia.nocookie.net/naruto/images/e/e6/Ten-Tails_emerges.png",
+                    modifier = Modifier.weight(1f)
+                )
+            }
+            Row(modifier = modifier.height(200.dp)) {
+                ImageCard(
+                    "Akatsuki",
+                    "",
+                    modifier = Modifier.weight(1f)
+                )
+                ImageCard(
+                    "Teams",
+                    "",
+                    modifier = Modifier.weight(1f)
+                )
+            }
+            Row(modifier = modifier.height(200.dp)) {
+                ImageCard(
+                    "Clans",
+                    "",
+                    modifier = Modifier.weight(1f)
+                )
+                ImageCard(
+                    "Villages",
+                    "",
+                    modifier = Modifier.weight(1f)
+                )
+            }
+            Row(modifier = modifier.height(200.dp)) {
+                ImageCard(
+                    "Kekkei Genkai",
+                    "",
+                    modifier = Modifier.weight(1f)
+                )
+                ImageCard(
+                    "kara",
+                    "",
                     modifier = Modifier.weight(1f)
                 )
             }
