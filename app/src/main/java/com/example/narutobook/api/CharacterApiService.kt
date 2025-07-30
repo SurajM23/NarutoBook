@@ -1,6 +1,7 @@
 package com.example.narutobook.api
 
 import com.example.narutobook.model.CharacterResponse
+import com.example.narutobook.utils.Constants
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -12,11 +13,10 @@ interface CharacterApiService {
 }
 
 object RetrofitInstance {
-    private const val BASE_URL = "https://dattebayo-api.onrender.com/"
 
     val api: CharacterApiService by lazy {
         Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(CharacterApiService::class.java)
